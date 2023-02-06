@@ -1,0 +1,575 @@
+@import "./variables";
+
+main {
+  width: 100%;
+  font-family: "Noto Sans Bamum", sans-serif;
+
+  .hero {
+    height: 40vh;
+    width: 100vw;
+    background-image: url(../images/tunisia/hero.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    margin-top: 14vh;
+  }
+  .grid-container {
+    display: grid;
+    gap: 0.5rem;
+    width: 100vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-template-areas:
+      " one two"
+      "three four";
+    place-items: center;
+    margin-top: 1vh;
+    
+   
+
+    .one {
+      display: flex;
+
+      grid-area: one;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      
+      img {
+        @include image-size;
+        &:hover{
+          transform: rotate(360deg);
+          transition: all 1s ease;
+        }
+        
+      }&:hover {
+          opacity: 0.6;
+          cursor: pointer;
+           
+        }
+      span {
+        
+        @include span-grid;
+        &:hover {
+          font-size: x-large;
+        }
+      }
+    }
+    .two {
+      display: flex;
+      grid-area: two;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      img {
+        @include image-size;
+        &:hover{
+          transform: rotate(-360deg);
+          transition: all 1s ease;
+        }
+      }
+      &:hover {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+      span {
+        @include span-grid;
+        &:hover {
+          font-size: x-large;
+        }
+      }
+    }
+    .three {
+      display: flex;
+      grid-area: three;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      img {
+        @include image-size;
+        &:hover{
+          transform: rotate(360deg);
+          transition: all 1s ease;
+        }
+      }
+      &:hover {
+        opacity: 0.6;
+        cursor: pointer;
+      }
+      span {
+        @include span-grid;
+        &:hover {
+          font-size: x-large;
+        }
+      }
+    }
+    .four {
+      display: flex;
+      grid-area: four;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+
+      img {
+        @include image-size;
+        &:hover{
+          transform: rotate(-720deg);
+          transition: all .5s ease;
+        }
+      }
+      &:hover {
+        opacity: 0.6;
+        cursor: pointer;
+        
+      }
+      span {
+        @include span-grid;
+        &:hover {
+          font-size: x-large;
+        }
+      }
+    }
+  }
+
+  .recipes {
+    display: flex;
+    flex-direction: column;
+    width: 100vw;
+    height: max-content;
+    align-items: center;
+    justify-content: center;
+    
+    
+  }
+}
+
+.appear {
+  z-index: -2;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: $primary-color;
+  padding: 0.5rem 0.9rem;
+  color: white;
+  margin: 3rem 0;
+  box-shadow: 0 15px 10px rgba(0, 0, 0, 0.257);
+  &:hover{
+    cursor: pointer;
+  }
+&:hover + .overlay {
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  gap: 10px;
+  align-items: center;
+  height: max-content;
+  width: 100vw;
+  transform: translate(0 , -45vh);
+  background-color: transparent;
+  backdrop-filter: blur(10px);
+  
+  .overlay-bg-1 {
+    border: 1px $primary-color solid;
+    @include flex-c;
+    z-index: 1111;
+    height: fit-content;
+    box-shadow: $shadow;
+    padding: 2vh 2.5vw;
+    background-color: $primary-color-o;
+    border-radius: 15px;
+  
+
+    img {
+      @include image-size-overlay;
+      transform: translate(0);
+    }
+    p {
+      @include p-overlay-over
+    }
+  }
+  .overlay-bg-2 {
+    border: 1px $primary-color solid;
+    @include flex-c;
+    padding: 2vh 2.5vw;
+    background-color: $primary-color-o;
+    height: fit-content;
+    box-shadow: $shadow;
+    border-radius: 15px;
+    background-size: cover;
+    img {
+      @include image-size-overlay;
+      transform: translate(0);
+    }
+    p {
+        @include p-overlay-over
+    }
+  }
+  .overlay-bg-3 {
+    border: 1px $primary-color solid;
+    @include flex-c;
+    height: fit-content;
+    box-shadow: $shadow;
+    padding: 1rem;
+    padding: 2vh 2.5vw;
+    border-radius: 15px;
+    background-color: $primary-color-o;
+    
+    img {
+      @include image-size-overlay;
+      transform: translate(0);
+      
+      
+    }
+    p {
+        @include p-overlay-over
+      
+    }
+    a{
+      margin: 0 auto;
+    }
+  }
+
+}
+
+}
+.overlay {
+  position: absolute;
+    
+    z-index: 1000;
+    transform: translate(-100%, -45vh);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ 
+  .overlay-bg-1 p,
+  .overlay-bg-2 p,
+  .overlay-bg-3 p {
+    transform: translate(-105%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+  }
+  .overlay-bg-1 img,
+  .overlay-bg-2 img,
+  .overlay-bg-3 img {
+    @include image-size-overlay;
+    
+    transform: translate(-105%, 0);
+    transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+
+  }
+}
+
+
+
+.all-recipes {
+  display: flex;
+  overflow: scroll;
+  width: 100vw;
+  gap: 1rem;
+  margin-top: 25px;
+  // align-items: center;
+  // justify-content: center;
+  .recipe {
+    margin-top: 25px;
+    width: 120px;
+    display: flex;
+    flex-direction: column;
+    text-transform: uppercase;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.5rem;
+    gap: 0.5rem;
+    &:hover img *{ 
+      transform: scale(-1);
+    }
+  }
+  img {
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    padding: 0.1rem;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.382);
+    
+  }
+}
+form {
+  z-index: -5;
+  .fa-solid {
+    margin-right: -7vw;
+    position: relative;
+    color: $primary-color;
+    z-index: 1;
+  }
+  input {
+    width: 85vw;
+    height: 50px;
+    padding: 1rem 1.5rem;
+    z-index: -5;
+  }
+}
+
+.card-1 {
+  background-color: rgba(255, 255, 255, 0.214);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 10px;
+  height: 30vh;
+  width: 80vw;
+  margin: 5vw auto;
+  text-align: center;
+  position: relative;
+  color: $primary-color;
+  z-index: -5;
+
+  &::before {
+    content: "";
+    background-image: url(../images/tunisia/btm-card.jpg);
+    background-size: cover;
+    background-position: center;
+    filter: blur(15px);
+    position: absolute;
+    top: -10px;
+    bottom: -10px;
+    left: -10px;
+    right: -10px;
+    z-index: -1;
+  }
+
+  &-header-1 {
+    background-color: rgba(255, 255, 255, 0.489);
+    padding: 20px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    position: relative;
+    z-index: 1;
+  }
+
+  &-body-1 {
+    padding: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  &-body:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+  }
+ 
+  .video-container {
+    width: 100vw;
+    height: 50vh;
+    position: relative;
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+  }
+}
+  
+}
+@media screen and (min-width:426px) {
+  .grid-container{
+    margin: 5vw auto
+     !important;
+    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-rows: none !important;
+    grid-template-areas: " one two three four" !important;
+    width: 80vw !important;
+    place-items: center !important;
+    .one{
+      grid-area: one !important;
+    }
+    .two{
+      grid-area: two !important;
+    }
+    .three{
+      grid-area: three !important;
+    }
+    .four{
+      grid-area: four !important;
+    }
+    img{
+      width: calc(80vw/4) !important;
+      height: 40vh;
+    }
+  }
+  .appear{
+    width: 60vw !important;
+    margin: 0 auto !important;
+  } .appear:hover .overlay {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    gap: 10px;
+    margin: 0 auto;
+    align-items: center;
+    height: min-content;
+    transform: translate(0% , -25vh !important);
+    transition: transform 0.5s linear ;
+    color: white;
+    
+    
+  
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    
+    .overlay-bg-1 {
+      border: 1px $primary-color solid;
+      @include flex-c;
+      z-index: 1111;
+      
+      box-shadow: $shadow;
+      padding: 2vh 2.5vw;
+      background-color: $primary-color-o;
+      border-radius: 15px;
+      width: 300px !important;
+      transform: translate(0% ,45vh !important);
+      transition: transform 1s linear  !important;
+    
+
+      img {
+        width: 250px !important;
+        height: 250px !important;
+        transform: translate(50%,0);
+        transition: transform 1s linear  !important;
+      }
+      p {
+       width: 250px !important;
+      }
+    }
+    .overlay-bg-2 {
+      border: 1px $primary-color solid;
+      @include flex-c;
+      padding: 2vh 2.5vw;
+      background-color: $primary-color-o;
+      height: fit-content;
+      box-shadow: $shadow;
+      border-radius: 15px;
+      background-size: cover;
+      transition: transform 1s linear  !important;
+      img {
+        width: 250px !important;
+        height: 250px !important;
+        transform: translate(0%);
+        transition: transform 1s linear !important;
+      }
+      p {
+          @include p-overlay-over
+      }
+    }
+    .overlay-bg-3 {
+      border: 1px $primary-color solid;
+      @include flex-c;
+      height: fit-content;
+      box-shadow: $shadow;
+      padding: 2vh 2.5vw;
+      border-radius: 15px;
+      background-color: $primary-color-o;
+      transition: transform 1s linear  !important;
+      
+      img {
+        width: 250px !important;
+        height: 250px !important;
+        transform: translate(0%);
+        transition: transform 1s linear  !important;
+        
+      }
+      p {
+          @include p-overlay-over
+        
+      }
+    }
+  }
+  
+  .overlay {
+    
+    position: absolute;
+   display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: min-content;
+    transform: translate(-100% ,70vh);
+    transition: transform 1s linear 1s !important;
+  
+
+    .overlay-bg-1 img,
+    .overlay-bg-2 img,
+    .overlay-bg-3 img {
+      width: 250px !important;
+      height: 250px !important;
+      transform: translate(-105%, -100%);
+      transition: transform 1s linear  !important;
+      
+  
+    }
+  }
+  .all-recipes{
+    background-color: $primary-color-o;
+    backdrop-filter: blur(5px);
+    width: 50vw;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+  .all-recipes {
+    z-index: -5;
+    color: white;
+    display: flex;
+    overflow: scroll;
+    width: 70vw;
+    gap: 2rem;
+    // align-items: center;
+    // justify-content: center;
+    .recipe {
+      $shadow : 5px 5px 10px rgba(255, 255, 255, 0.985) !important;
+      width: 20vw;
+      display: flex;
+      flex-direction: column;
+      text-transform: uppercase;
+      justify-content: center;
+      align-items: center;
+      font-size: 0.7rem;
+      gap: 0.5rem;
+      img {
+        height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        padding: 0.1rem;
+      }
+      
+     
+      span{
+        font-size: x-large;
+      &:hover img{
+        transform: scaleX(-1) !important; }}
+      
+    }
+
+}
+form {
+  margin-top: 15px;
+  transform: translateX(2.5vw);
+  z-index: -5;
+  .fa-solid {
+    margin-right: -7vw;
+    position: relative;
+    color: $primary-color;
+    z-index: 1;
+  }
+  input {
+    width: 65vw;
+    height: 50px;
+    z-index: -5;
+    
+    
+    
+    
+  }
+} 
+input::placeholder{
+
+  color: $primary-color !important;
+  transform: translateX(10vw) ;
+} 
+}
+  
+
+  
+    

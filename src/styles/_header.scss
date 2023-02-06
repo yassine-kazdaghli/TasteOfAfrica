@@ -1,0 +1,247 @@
+@import"./variables";
+*{
+  font-family: 'Noto Sans Bamum', sans-serif;
+}
+header {
+  position: fixed;
+  top:0;
+  left: 0;
+  height: 15vh;
+  
+}
+.links-nav-big-screen{display: none;}
+.top-nav{
+  
+    width: 100vw;
+    position: fixed;
+    top:0;
+    padding-bottom: 2vh;
+    display: flex;
+    flex-direction: column;
+    
+    height: 10vh;
+    ul{@include flex;
+      gap: 1rem;
+      background-color: $primary-color;
+      height: 4vh;
+      position: absolute;
+      width: 100vw;
+      top: 0px;
+      bottom: 0px;
+      z-index: 999;
+    li{
+    list-style: none;
+    color: rgba(255, 255, 255, 0.411);
+    &:hover{
+        color: white;
+        cursor:pointer;
+        font-size: 1.1rem;
+        
+  }
+  
+  }
+ 
+    }
+    .headers{
+      width: 100vw;
+      background-color: white;
+      height: 20vh;
+    }
+    h1{
+      color: $primary-color;
+      margin-left: 0.5rem;
+      margin-top: 4vh;
+      font-family: 'Noto Sans Bamum', sans-serif;
+
+    }
+    h2{
+      margin-left: 0.5rem;
+      font-size: 1rem;
+      font-family: 'Noto Sans Bamum', sans-serif;
+     
+  }
+
+}
+
+
+#menuToggle
+{
+  display: block;
+  position: relative;
+  top: 5vh;
+  left: 90vw;
+  width: 30vw;
+  z-index: 110;
+  padding-top: 1vh;
+  
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+#menuToggle a
+{
+  text-decoration: none;
+  color: white;
+  
+  
+  transition: color 0.3s ease;
+}
+
+#menuToggle a:hover
+{
+  color: $bg-color;
+}
+
+
+#menuToggle input
+{
+  display: block;
+  width: 40px;
+  height: 32px;
+  position: absolute;
+  top: -7px;
+  left: -5px;
+  
+  cursor: pointer;
+  
+  opacity: 0; /* hide this */
+  z-index: 2; /* and place it over the hamburger */
+  
+  -webkit-touch-callout: none;
+}
+
+/*
+ * Just a quick hamburger
+ */
+#menuToggle span
+{
+  display: block;
+  width: 33px;
+  height: 4px;
+  margin-bottom: 5px;
+  position: relative;
+  background-color: $primary-color;
+  border-radius: 3px;
+  
+  z-index: 1;
+  
+  transform-origin: 4px 0px;
+  
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+              opacity 0.55s ease;
+}
+
+#menuToggle span:first-child
+{
+  transform-origin: 0% 0%;
+}
+
+#menuToggle span:nth-last-child(2)
+{
+  transform-origin: 0% 100%;
+}
+
+/* 
+ * Transform all the slices of hamburger
+ * into a crossmark.
+ */
+#menuToggle input:checked ~ span
+{
+  opacity: 1;
+  transform: rotate(45deg) translate(-2px, -1px);
+  background: $primary-color;
+}
+
+/*
+ * But let's hide the middle one.
+ */
+#menuToggle input:checked ~ span:nth-last-child(3)
+{
+  opacity: 0;
+  transform: rotate(0deg) scale(0.2, 0.2);
+}
+
+/*
+ * Ohyeah and the last one should go the other direction
+ */
+#menuToggle input:checked ~ span:nth-last-child(2)
+{
+  transform: rotate(-45deg) translate(0, -1px);
+}
+
+/*
+ * Make this absolute positioned
+ * at the top right of the screen
+ */
+#menu
+{
+  position: absolute;
+  width: 60vw;
+  margin: 4vh 0px 0 -100vw;
+  padding: 50px;
+  padding-top: 50px;
+  z-index: 1;
+  background: $primary-color;
+  list-style-type: none;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li
+{
+  padding: 0.9rem 0.3rem;
+  font-size: 1.5rem;
+}
+
+/*
+ * And let's slide it in from the left
+ */
+#menuToggle input:checked ~ ul
+{
+  transform: translate(0vw);
+  width: 60vw;
+}
+
+
+  @media screen and (min-width:426px) {
+    #menuToggle{
+      display: none;
+    } .headers {
+      display: grid;
+     grid-template-columns: 1fr 1fr;
+     grid-template-areas: " left right";
+      width: 100vw;
+      height: 9.02vh;
+      place-items: center;
+    .left{
+      grid-area: left;
+    }
+      nav{
+        grid-area: right;
+        @include flex;
+        gap: 2rem;
+        a{
+          text-decoration: none;
+          color: $primary-color;
+          font-size:x-large;
+          text-transform: uppercase;
+          
+        }:nth-of-type(1):hover {
+          border-bottom: 5px solid $primary-color;
+        }
+        :nth-of-type(2):hover {
+          border-bottom: 5px solid $primary-color;
+        }
+        :nth-of-type(3):hover {
+          border-bottom: 5px solid $primary-color;
+        }
+        
+      }
+    }
+    
+    
+   
+    
+  }
+

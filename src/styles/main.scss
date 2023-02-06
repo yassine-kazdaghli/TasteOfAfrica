@@ -4,14 +4,16 @@
 // You need the base only when you are not using bootstrap. In that case, go to _base.scss
 // to customize it as you may want.
 
-@import "variables";
-@import "../../node_modules/bootstrap/scss/bootstrap";
 
 // Write your sass code here or import partials
+@import "variables";
+@import "base";
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import"./header";
+@import"./hero";
+@import"./footer";
 
-h1 {
-  color: tomato;
-}
+
 .topmost-box{
   display: flex;
   justify-content: center;
@@ -204,3 +206,4 @@ footer{
 .img-shadow img{
   box-shadow : 5px 5px 10px rgba(0, 0, 0, 0.985);
 }
+
