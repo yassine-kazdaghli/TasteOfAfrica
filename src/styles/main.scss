@@ -1,3 +1,5 @@
+
+/*  DELETE ALL ABOVE THIS LINE */
 // @import "base";
 // You need the base only when you are not using bootstrap. In that case, go to _base.scss
 // to customize it as you may want.
@@ -9,4 +11,196 @@
 
 h1 {
   color: tomato;
+}
+.topmost-box{
+  display: flex;
+  justify-content: center;
+  color: white;
+  height: 50px;
+}
+.top-box{
+  background-color: white;
+  width: 100vw;
+  /* display: flex; */
+  justify-content: space-evenly;
+  height: 100px;
+}
+header{
+  background-color: pink;
+  width: 100vw;
+  height: 490px;
+}
+nav{
+  position: relative;
+  margin-left: 30%;
+}
+nav, ul{
+  list-style-type: none !important;
+  display: flex;
+  text-decoration: none;
+}
+nav, ul, li,a{
+  padding: 0px 5px 0px 5px;
+  text-decoration: none;
+}
+h1{
+  color: rgb(97, 13, 27);
+  margin-left: 10px;
+}
+.sub{
+  color: white;
+  text-align: center;
+}
+.sub-link{
+  color: white;
+}
+.nav-link{
+  color: black;
+  font-weight: bold;
+}
+.subtitle{
+  text-align: center;
+  color: white;
+}
+.sub-para{
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 50px;
+  color: white;
+}
+form{
+  margin-top: 10px;
+margin: auto;
+}
+.sub-1{
+  text-align: center;
+  color: rgb(97, 13, 27);
+}
+.sub-para1{
+  text-align: center;
+  color: black;
+}
+.sub-3{
+  text-align: center;
+}
+.recipe-button{
+  margin-left: 30%;
+  background-color: palevioletred;
+  padding: 10px;
+  font-weight: bold;
+}
+.list-title{
+  color: rgb(97, 13, 27);
+}
+.list-ul, .list-li, a{
+list-style-type: disc;
+margin-left: 10px;
+color: black;
+}
+.icons{
+  display: flex;
+  justify-content: space-around;
+  font-weight: bold;
+  font-size: 48px;
+}
+footer{
+  background-color: aqua;
+}
+.footer-div{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.container-lg{
+  margin-left: 50px;
+}
+.dish-menu{
+  margin-left: 50px;
+}
+/* TABLET MEDIA QUERY */
+@media screen and (max-width:768px) {
+  h1{
+      margin-left: 50px;  
+  }
+  form{
+    margin-left: 35%;
+  }
+  .icons{
+    display: inline;
+  }
+  h4{
+    text-align: center;
+  }
+}
+/* DESKTOP MEDIA QUERY */
+ @media screen and (max-width:1024px) {
+  .icons{
+     display: inline;
+     
+  }
+  form{
+    margin-left: 35%;
+  }
+ .row1{
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+ }
+ .row2{
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+ }
+ .row3{
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+ }
+ .row4{
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+ }
+ .row5{
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+ }
+} 
+/* MEDIA QUERY FOR WIDTH OF 1025px AND ABOVE */
+@media screen and (min-width:1025px) {
+  .icons{
+     display: inline;
+  }
+  form{
+    margin-left: 35%;
+  }
+ .row1{
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+ }
+ .row2{
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+ }
+ .row3{
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+ }
+ .row4{
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+ }
+ .row5{
+  display: flex;
+  width: 100vw;
+  flex-wrap: wrap;
+ }
+} 
+.img-shadow img{
+  box-shadow : 5px 5px 10px rgba(0, 0, 0, 0.985);
 }
