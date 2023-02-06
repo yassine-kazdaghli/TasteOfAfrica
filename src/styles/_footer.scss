@@ -1,0 +1,28 @@
+@import "./variables" ;
+
+
+footer{
+    margin-top: 5vh;
+    width: 100vw;
+    height: 6vh ;
+    background-color: $primary-color;
+    font-size: smaller;
+    
+    ul{
+        height: 100% ;
+        @include flex ;
+        
+        gap:0.2rem;
+        li { color: white;
+    list-style: none;
+        a{
+            color: inherit;
+            text-decoration: none;
+        }
+    }
+        
+    }
+}
+@media screen and (min-width:426px) {
+    
+}
