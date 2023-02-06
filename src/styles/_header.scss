@@ -20,6 +20,7 @@ header {
     flex-direction: column;
     
     height: 10vh;
+    
     ul{@include flex;
       gap: 1rem;
       background-color: $primary-color;
