@@ -10921,4 +10921,242 @@ textarea.form-control-lg {
   .d-print-none {
     display: none !important;
   }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+nav {
+  height: 50px;
+  color: #561217;
+}
+nav ul {
+  display: flex;
+  justify-content: space-around;
+}
+nav li {
+  padding: 10px;
+  list-style-type: none;
+}
+nav a {
+  color: #561217;
+  text-decoration: none;
+  font-weight: 900;
+}
+nav:hover {
+  background-color: #561217;
+  font-size: x-large;
+}
+
+header {
+  background-image: url(../images/Backgrounds/deserttunis.jpg);
+  background-size: cover;
+  height: 400px;
+  margin: 10px;
+  padding: 10px;
+  text-align: center;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+input[type=text] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid gray;
+  border-radius: 5px 0 0 5px;
+  width: 60%;
+}
+
+button[type=submit] {
+  padding: 10px 20px;
+  background-color: lightgray;
+  border: none;
+  border-left: none;
+  border-radius: 0 5px 5px 0;
+  font-size: 16px;
+}
+
+main {
+  width: 100vw;
+}
+
+.card {
+  /*  display: inline-block;
+  flex-direction: row; */
+  border-radius: 12px;
+}
+
+.container h1, .container .h1 {
+  font-size: large;
+}
+
+.card-img {
+  border-radius: 50%;
+  border-bottom-left-radius: 0;
+}
+
+main {
+  background-color: burlywood;
+}
+
+h5 img, .h5 img {
+  border-radius: 50%;
+  border-bottom-right-radius: 0px;
+  border: 5px none burlywood;
+  /*  box-shadow: 4px 4px 6px 5px rgba(0, 0, 0, 1); */
+}
+
+div {
+  /*   height: 200px;
+  width: 200px;
+
+  border-radius: 15px;
+
+  -webkit-animation: slide-in-fwd-center 0.4s
+    cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-fwd-center 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) both; */
+}
+
+.container {
+  border: 5px none black;
+  border-radius: 7px;
+  /*   box-shadow: 4px 4px 6px 5px rgba(0, 0, 0, 1); */
+  margin: 5px;
+}
+
+.container2 {
+  width: 75vw;
+  border: 5px none black;
+  border-radius: 7px;
+  display: flex;
+  margin-bottom: 10px;
+  margin: 0 auto;
+  /*  box-shadow: 4px 4px 6px 5px rgba(0, 0, 0, 1); */
+}
+
+.container:nth-of-type(1) {
+  background-color: blanchedalmond;
+  position: relative;
+  left: 20%;
+  color: black;
+  font-weight: bolder;
+}
+
+.container:nth-of-type(2) {
+  background-color: blanchedalmond;
+  /*   position: relative;
+  top: 10px; */
+  color: black;
+  font-weight: bolder;
+}
+
+.container:nth-of-type(3) {
+  background-color: blanchedalmond;
+  /*   position: relative;
+  left: 25%;
+  top: 10px; */
+  color: black;
+  font-weight: bolder;
+}
+
+.blockquote {
+  border: 1px solid dimgray;
+  background-color: aqua;
+}
+
+.container-img {
+  position: relative;
+  width: 300px;
+  height: 200px;
+}
+
+.container-img img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-animation: slide 5s infinite;
+          animation: slide 5s infinite;
+}
+
+@-webkit-keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  33.33% {
+    transform: translateX(-100%);
+  }
+  66.66% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  33.33% {
+    transform: translateX(-100%);
+  }
+  66.66% {
+    transform: translateX(-200%);
+  }
+  100% {
+    transform: translateX(-300%);
+  }
+}
+@media (max-width: 768px) {
+  .container:nth-of-type(1) {
+    background-color: blanchedalmond;
+    position: relative;
+    left: 0px;
+    color: black;
+    font-weight: bolder;
+    overflow: scroll;
+  }
+  .container:nth-of-type(2) {
+    background-color: blanchedalmond;
+    position: relative;
+    color: black;
+    font-weight: bolder;
+    overflow: scroll;
+  }
+  .container:nth-of-type(3) {
+    background-color: blanchedalmond;
+    position: relative;
+    left: 0px;
+    color: black;
+    font-weight: bolder;
+    overflow: scroll;
+  }
+  .card {
+    display: none;
+    flex-direction: row;
+  }
+  .container2 {
+    position: relative;
+    left: 0px;
+  }
+}
+ul {
+  display: flex;
+  list-style: none;
+}
+ul li {
+  padding-left: 10px;
+}
+ul a {
+  text-decoration: none;
 }/*# sourceMappingURL=main.css.map */
