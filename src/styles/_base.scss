@@ -163,6 +163,10 @@ div {
   background-color: aqua;
 }
 
+form {
+  display: flex;
+  flex-direction: row;
+}
 .container-img {
   position: relative;
   width: 300px;
